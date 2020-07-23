@@ -1,0 +1,86 @@
+/* 公共样式 */
+html, body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4,h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td, em, button {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+::selection{
+    background-color: #333;
+    color: white;
+}
+::-moz-selection{
+    background-color: #333;
+    color: white;
+}
+::-webkit-selection{
+    background-color: #333;
+    color: white;
+}
+a{
+    text-decoration: none;
+    color: #444;
+}
+body{
+    font-family: "Roboto", Arial, sans-serif;
+    font-size: 15px;
+    line-height: 1.5em;
+    color: #444;
+    font-weight: 300;
+}
+main.container{
+    display: flex;
+    max-width: 1200px;
+    min-width: 1200px;
+    min-height: 100vh;
+    margin: 40px auto;
+    border-radius: 10px;
+    box-shadow: 0 0 40px rgba(0,0,0,.3) ;
+}
+.active{
+    position: relative;
+}
+.active::before{
+    content: "";
+    position: absolute;
+    top: 19px;
+    left: -50px;
+    border: 10px solid transparent;
+    border-left-color: #e3e3e3;
+}
+.active::after{
+    content: "";
+    position: absolute;
+    /* top和bottom为0，可以把高度拉伸到和父级一样高 */
+    top: 0; 
+    bottom: 0;
+    left: -50px;
+    width: 320px;
+    background-color: transparent;
+    transition: 0.2s ease;
+}
+.active:hover::after{
+    background-color: rgba(0,0,0,0.05);
+}
+.disappear{
+    opacity: 0;
+    transition: 0.4s ease-in;
+}
+.b-disappear{
+    opacity: 1;
+    transition: 0.4s ease-in;
+}
+.appear{
+    transform: translateX(-100%);
+    transition: 0.4s ease-in-out;
+}
+.b-appear{
+    transform: translateX(0);
+    transition: 0.4s ease-in-out;
+}
+/* 阿里彩色图标 */
+.icon {
+    width: 1em; height: 1em;
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
+ }
